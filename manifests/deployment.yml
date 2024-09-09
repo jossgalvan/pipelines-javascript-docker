@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: jossgalvanpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jossgalvanpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: jossgalvanpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: jossgalvanpipelinesjavascriptdocker 
+          image: joscontainerregistry.azurecr.io/jossgalvanpipelinesjavascriptdocker
+          ports:
+          - containerPort: 80
